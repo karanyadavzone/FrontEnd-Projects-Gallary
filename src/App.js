@@ -4,9 +4,8 @@ import Homecard from "./HomeCard/Homecard";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-screen">
     <Homecard/>
-      <p className=" text-9xl text-purple-500">.......</p>
     </div>
   );
 }
