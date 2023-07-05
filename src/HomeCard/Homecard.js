@@ -4,41 +4,20 @@ import Project1 from "../Project - 1/Project-1";
 import Project2 from "../Project - 2/Project-2";
 
 const Homecard = () => {
-  const form = document.querySelector("form");
-  const sliders = document.querySelectorAll('input[type="range"]');
-
-  const rangeToPercent = (slider) => {
-    const max = slider.getAttribute("max") || 10;
-    const percent = (slider.value / max) * 100;
-
-    return `${parseInt(percent)}%`;
-  };
-
-  sliders.forEach((slider) => {
-    slider.style.setProperty("--track-fill", rangeToPercent(slider));
-
-    slider.addEventListener("input", (e) => {
-      e.target.style.setProperty("--track-fill", rangeToPercent(e.target));
-    });
-  });
-
-  form?.addEventListener("input", (e) => {
-    const formData = Object.fromEntries(new FormData(form));
-    console.table(formData);
-  });
-
   return (
-    <>
-      <div className=" text-purple-700 text-4xl p-[4rem] 2xl:max-w-[none] bg-[black] h-screen">
-        Section 1
-        <div className="flex gap-[2rem] items-center justify-center">
-          <Project1 />
-          <Project2 />
+    <div className=" text-purple-700 p-[4rem] bg-gradient-to-r  from-teal-950  to-zinc-900 h-full w-full">
+      <div className="text-[#f4c622] text-2xl">All Projects</div>
+      <div className="flex w-full h-full flex-col justify-center">
+        <div className="flex items-start mb-[2rem] text-3xl text-[#f4c660]">Small Projects</div>
+        <div className="">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Project1 />
+            <Project2 />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default Homecard;
- 
