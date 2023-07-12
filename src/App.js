@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-import Homecard from "./HomeCard/Homecard";
+import Homecard from "./HomeCard/Homecard"; 
  
 function App() {
   return ( 
