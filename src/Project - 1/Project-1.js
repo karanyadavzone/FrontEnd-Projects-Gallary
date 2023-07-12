@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 import "./Project1.css";
 
 const Project1 = () => {
@@ -8,25 +9,63 @@ const Project1 = () => {
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
+  const project = [
+    {
+      img: "./E-Commerce.jpg",
+      Dev: "Karan Yadav",
+      Title: "E-commerce Website",
+      Github: "https://github.com/karanyadavzone",
+    },
+    {
+      img: "./Blog.jpg",
+      Dev: "Oliver",
+      Title: "E-commerce Website",
+      Github: "Github",
+    },
+    {
+      img: "./E-Commerce.jpg",
+      Dev: "Karan Yadav",
+      Title: "E-commerce Website",
+      Github: "Github",
+    },
+    {
+      img: "./Blog.jpg",
+      Dev: "Hunny",
+      Title: "E-commerce Website",
+      Github: "Github",
+    },
+  ];
   return (
     <>
-      <figure class="card">
-        <img src="./E-Commerce.jpg" alt="..." class="card__image" />
-        <figcaption class="card__body">
-          <div>
-            <h2 class="card__category">Karan Yadav</h2>
-            <p class="card__author">E-Commerce</p>
-          </div>
-          <div className="gap-[2rem]">
-            <a href="#" class="card__button text-sm mr-[15px]">
-              GitHub
-            </a>
-            <a href="#" class="card__button text-sm" onClick={handleOpenModal}>
-              View Details
-            </a>
-          </div>
-        </figcaption>
-      </figure>
+      {project?.map((name, id) => {
+        return (
+          <figure class="card">
+            <img src="./E-Commerce.jpg" alt="..." class="card__image" />
+            <figcaption class="card__body">
+              <div>
+                <h2 class="card__category">{name.Dev}</h2>
+                <p class="card__author">{name.Title}</p>
+              </div>
+              <div className="gap-[2rem]">
+                <Link
+                  className="card__button text-sm mr-[15px]"
+                  to={name.Github}
+                  target="blank"
+                >
+                  Github
+                </Link>
+                <a
+                  href=""
+                  class="card__button text-sm"
+                  onClick={handleOpenModal}
+                >
+                  View Details
+                </a>
+              </div>
+            </figcaption>
+          </figure>
+        );
+      })}
       <Modal
         isOpen={showModal}
         onRequestClose={handleCloseModal}
