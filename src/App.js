@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Homecard from "./HomeCard/Homecard";
 
 function App() {
-  return (
+  return ( 
     <BrowserRouter>
       <div className="App h-screen">
         <Homecard />
