@@ -7,7 +7,7 @@ const Project1 = () => {
   Modal.setAppElement("#root");
   const [showModal, setShowModal] = useState(false);
   const handleOpenModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
+  const handleCloseModal = () => setShowModal(false); 
 
   const project = [
     {
