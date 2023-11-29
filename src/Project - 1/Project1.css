@@ -18,7 +18,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #131213;
   line-height: 1.5;
-  display: grid;
+  /* display: grid; */
   place-items: center;
 }
 /* ======================== */
